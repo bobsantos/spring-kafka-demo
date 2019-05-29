@@ -11,7 +11,7 @@ public class PersonEvents {
     private static final Logger logger = LoggerFactory.getLogger(PersonEvents.class);
 
     @KafkaListener(topics = "${kafka.topics.person}")
-    public void handle(String message) {
-        logger.info("Received message: {}", message);
+    public void handle(Person person) {
+        logger.info("Received message: {}", person);
     }
 }
